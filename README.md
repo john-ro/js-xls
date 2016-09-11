@@ -1,6 +1,4 @@
-NOTE: this project has been merged into [js-xlsx](http://sheetjs.com/js-xlsx).
-The API is identical to js-xls. Some future changes may be backported, but all 
-new projects should use js-xlsx.
+NOTE: This is a modified version of `xlsjs`. It is recommended that the original be used, as this is tailored to be more forgiving for parsing purposes.
 
 # xls
 
@@ -13,9 +11,9 @@ Source: <http://sheetjs.com/js-xls>
 
 ## Installation
 
-With [npm](https://www.npmjs.org/package/xlsjs):
+With [npm](https://www.npmjs.org/package/xlsjs2):
 
-    npm install xlsjs
+    npm install xlsjs2
 
 In the browser:
 
@@ -24,9 +22,6 @@ In the browser:
 With [bower](http://bower.io/search/?q=js-xls):
 
     bower install js-xls
-
-CDNjs automatically pulls the latest version and makes all versions available at
-<http://cdnjs.com/libraries/xls>
 
 ## Optional Modules
 
@@ -60,7 +55,7 @@ data and feeding it into the library.  Here are a few common scenarios:
 - node readFile:
 
 ```
-if(typeof require !== 'undefined') XLS = require('xlsjs');
+if(typeof require !== 'undefined') XLS = require('xlsjs2');
 var workbook = XLS.readFile('test.xls');
 /* DO SOMETHING WITH workbook HERE */
 ```
