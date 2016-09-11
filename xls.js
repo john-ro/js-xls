@@ -5183,7 +5183,8 @@ function parse_ExtProp(blob, length) {
 			o[1] = parse_FullColorExt(blob, cb); break;
 		case 0x06: o[1] = parse_XFExtGradient(blob, cb); break;
 		case 0x0E: case 0x0F: o[1] = blob.read_shift(cb === 5 ? 1 : 2); break;
-		default: throw new Error("Unrecognized ExtProp type: " + extType + " " + cb);
+		//default: throw new Error("Unrecognized ExtProp type: " + extType + " " + cb);
+		default: o[1] = {}; // Silence the unknown
 	}
 	return o;
 }
@@ -5209,7 +5210,8 @@ function update_xfext(xf, xfext) {
 			case 0x07: case 0x08: case 0x09: case 0x0a: break;
 			case 0x0d: break; /* text color */
 			case 0x0e: break; /* font scheme */
-			default: throw "bafuq" + xfe[0].toString(16);
+			// default: throw "bafuq" + xfe[0].toString(16);
+			default: break;
 		}
 	});
 }
